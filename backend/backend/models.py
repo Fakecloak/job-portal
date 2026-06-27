@@ -1,5 +1,5 @@
 from django.db import models
-from djnago.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 class Job(models.Model):
     title=models.CharField(max_length=200)
@@ -12,13 +12,12 @@ class Job(models.Model):
 
 
 class Application(models.Model):
-    STATUS_CHOICES = ( //tuple
+    STATUS_CHOICES = (
         ('pending','Pending'),
         ('shortlisted','ShortListed'),
         ('rejected','Rejected'),
         ('hired','Hired')
     )
-
     job=models.ForeignKey(Job, on_delete=models.CASCADE)
     applicant=models.ForeignKey(User, on_delete=models.CASCADE)
     status=models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
