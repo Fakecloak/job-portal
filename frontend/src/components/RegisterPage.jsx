@@ -65,6 +65,7 @@ function RegisterPage() {
                     Search & apply to jobs from India’s top companies
                 </p>
 
+
                 <form action={formAction} className="mt-6 space-y-4">
 
                     <div>
